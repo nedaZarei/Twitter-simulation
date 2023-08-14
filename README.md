@@ -7,11 +7,11 @@ java Main
 java Main
 </code></div></div></pre></li></ul></li><li><p>Follow the on-screen instructions to sign up or log in and start using the Twitter simulation.</p></li></ol><p><strong>Note</strong>: Make sure you have Java and Git installed on your system before running the commands.</p><h2>Screenshots</h2><p>
  <p align="center">
-  <img src="https://github.com/nedaZarei/Twitter-simulation/blob/master/assets/login.png" width="350" title="hover text">
+  <img src="https://github.com/nedaZarei/Twitter-simulation/blob/master/assets/login.png" width="350" title="login">
 </p>
  <p align="center">
-  <img src="https://github.com/nedaZarei/Twitter-simulation/blob/master/assets/timeline.png" width="350" title="hover text">
-   <img src="https://github.com/nedaZarei/Twitter-simulation/blob/master/assets/profile.png" width="350" title="hover text">
+  <img src="https://github.com/nedaZarei/Twitter-simulation/blob/master/assets/timeline.png" width="350" title="timeline">
+   <img src="https://github.com/nedaZarei/Twitter-simulation/blob/master/assets/profile.png" width="350" title="profile">
 </p>
 
 </p><h2>Contributing</h2><p>Contributions to this project are welcome. Feel free to open issues and pull requests for bug fixes, improvements, or new features</p><h2>Acknowledgements</h2><p>The external libraries used in the project are AnimateFX, jdbc for sqlite, auth0/java-jwt for jwt authentication, </p><hr><p>By Calbon :)</p>
