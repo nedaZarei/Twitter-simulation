@@ -351,29 +351,6 @@ public class UserManagement {
         return Main.db.otherProfileInfo(username);
     }
 
-    public ServerResponse createPoll(String creatorId, String description, String numberOfChoices, String choices) {
-        ServerResponse serverResponse = new ServerResponse();
-        serverResponse.setContent(creatorId + " createPoll-ok");
-        serverResponse.setResponseType(ResponseType.OK);
-        LocalDateTime currentTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        currentTime.format(formatter);
-        String timeStamp = currentTime.toString();
-        Main.db.createPoll(description, numberOfChoices, choices, creatorId, timeStamp);
-
-        return serverResponse;
-    }
-
-    public ServerResponse voting(String voterId, String choice, int pollId) {
-        ServerResponse serverResponse = new ServerResponse();
-        serverResponse.setContent(voterId + " vote-ok");
-        LocalDateTime currentTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        currentTime.format(formatter);
-        String timeStamp = currentTime.toString();
-        Main.db.voting(voterId, pollId, choice, timeStamp);
-        return serverResponse;
-    }
     public ArrayList<User> getUsersForDirect(String username) {
         return Main.db.getDirectUsers(Main.db.getFollowingsForDirect(username));
     }
