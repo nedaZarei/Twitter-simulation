@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="330.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="504.0" prefHeight="56.0" prefWidth="330.0">
+         <children>
+            <Button layoutX="21.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="139.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/explor.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="236.0" layoutY="8.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/message.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="62.0" layoutY="15.0" prefHeight="25.0" prefWidth="254.0" promptText="Search here" />
+      <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="20.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/explor.png" />
+         </image>
+      </ImageView>
+      <ListView layoutY="49.0" prefHeight="457.0" prefWidth="330.0" />
+   </children>
+</AnchorPane>

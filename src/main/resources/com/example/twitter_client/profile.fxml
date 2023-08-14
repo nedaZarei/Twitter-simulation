@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="330.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.twitter_client.Controller">
+   <children>
+      <ImageView fx:id="headerImage" fitHeight="100.0" fitWidth="336.0" layoutX="-6.0" pickOnBounds="true" />
+      <ImageView fx:id="avatarImage" fitHeight="41.0" fitWidth="61.0" layoutX="34.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="95.0" layoutY="97.0" prefHeight="5.0" prefWidth="236.0" />
+      <Separator layoutX="-2.0" layoutY="97.0" prefHeight="5.0" prefWidth="35.0" />
+      <Label fx:id="usernameProfileLabel" layoutX="15.0" layoutY="121.0" prefHeight="28.0" prefWidth="202.0" style="-fx-background-color: white;">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font></Label>
+      <Label fx:id="bioLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="186.0" prefHeight="56.0" prefWidth="290.0" style="-fx-background-color: white;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+      <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="22.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/location.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="locationLabel" layoutX="45.0" layoutY="264.0" prefHeight="17.0" prefWidth="61.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="121.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/link-icon.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="webSiteLabel" layoutX="156.0" layoutY="264.0" prefHeight="18.0" prefWidth="166.0" style="-fx-background-color: white;" />
+      <Text layoutX="60.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Followers">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></Text>
+      <Label fx:id="followersCountLabel" layoutX="116.0" layoutY="321.0" prefHeight="18.0" prefWidth="35.0" style="-fx-background-color: white;" />
+      <Text layoutX="200.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Following">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></Text>
+      <Label fx:id="followingCountLabel" layoutX="255.0" layoutY="321.0" prefHeight="18.0" prefWidth="35.0" style="-fx-background-color: white;" />
+      <AnchorPane layoutY="504.0" prefHeight="56.0" prefWidth="330.0">
+         <children>
+            <Button fx:id="homeBtn" layoutX="28.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="explorerBtn" layoutX="139.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/explor.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="directBtn" layoutX="236.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/message.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="-2.0" layoutY="501.0" prefHeight="5.0" prefWidth="330.0" />
+      <Button fx:id="editProfileBtn" layoutX="237.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #3698d9; -fx-background-radius: 90;" text="Edit Profile" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="blackListBtn" layoutX="97.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #3698d9; -fx-background-radius: 90;" text="blackList" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="followersListBtn" layoutX="23.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #3698d9; -fx-background-radius: 90;" text="Followers" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="followingListBtn" layoutX="176.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #3698d9; -fx-background-radius: 90;" text="Following" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Separator layoutY="308.0" prefHeight="6.0" prefWidth="330.0" />
+      <Label fx:id="fullnameLabels" layoutX="17.0" layoutY="158.0" prefHeight="28.0" prefWidth="134.0" textFill="#796c6c">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+package com.example.twitter_client.Server;
+
+import java.io.Serializable;
+
+public enum ResponseType implements Serializable {
+    OK,
+    USERNAME_INVALID,
+    PASSWORD_INVALID,
+    USER_NOT_FOUND,
+    ACCESS_DENIED,
+    INVALID_VERIFICATION,
+    SQLERROR,
+    SERVER_NOT_FOUND,
+    USER_ALREADY_EXIST,
+    EMAIL_ALREADY_EXIST,
+    NUMBER_ALREADY_EXIST,
+    ONE_OF_EMAIL_OR_NUMBER_SHOULD_BE_ENTERED,
+    IMAGE_SIZE_INVALID,
+    TEXT_SIZE_INVALID,
+    URL_INVALID,
+    POLL_NOT_FOUND,
+    MESSAGE_NOT_FOUND;
+}

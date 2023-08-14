@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="330.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.twitter_client.Controller">
+   <children>
+      <Button fx:id="simpleTweetBtn" layoutX="63.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet" textFill="#13171b">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="photoTweetBtn" layoutX="62.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet with photo">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="videoTweetBtn" layoutX="62.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet with video">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="createPollBtn" layoutX="62.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Create Poll">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutY="504.0" prefHeight="56.0" prefWidth="330.0">
+         <children>
+            <Button fx:id="homeBtn" layoutX="28.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="explorerBtn" layoutX="139.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/explor.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="directBtn" layoutX="236.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="51.0" style="-fx-background-color: white;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/message.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="73.0" layoutY="82.0" prefHeight="8.0" prefWidth="183.0" text="Choose your tweet type:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="polls" layoutX="62.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Polls">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
