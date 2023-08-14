@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import com.example.twitter_client.ClientRequest;
-import com.example.twitter_client.PollInfo;
 import com.example.twitter_client.Server.Main;
 
 class ClientHandler implements Runnable {
@@ -41,7 +40,6 @@ class ClientHandler implements Runnable {
                 ArrayList<Integer> followerAndFollowingNumOther = new ArrayList<>();
                 ArrayList<User> users = new ArrayList<>();
                 ArrayList<Message> messagesWithHashtag = new ArrayList<>();
-                ArrayList<PollInfo> polls = new ArrayList<>();
                 ArrayList<DirectMessage> directMessages = new ArrayList<>();
                 ArrayList<User> usersInDirect = new ArrayList<>();
                 ArrayList<Message> replies = new ArrayList<>();
@@ -178,22 +176,12 @@ class ClientHandler implements Runnable {
                         break;
                     case "searchHashtag":
                         flagSearchHashtag = true;
-                        messagesWithHashtag = management.searchHashtag(JWToken.VerifyJWT(request.getJwt()),contents[0]);// #word
+                        messagesWithHashtag = management.searchHashtag(JWToken.VerifyJWT(request.getJwt()), contents[0]);// #word
                         for (Message message : messagesWithHashtag) {
                             String time = TimeDifferenceCalculator.calculateTimeDifference(LocalDateTime.parse(message.getDate()), LocalDateTime.now());
                             message.setDate(time);
                         }
                         messagesWithHashtag.add(new Message("", "hashtagMessage", "", "", "", "", "", "", "", 0, 0, 0, 0));
-                        break;
-                    case "create-poll":
-                        response = management.createPoll(JWToken.VerifyJWT(request.getJwt()), contents[0], contents[1], contents[2]);
-                        break;
-                    case "vote":
-                        response = management.voting(JWToken.VerifyJWT(request.getJwt()), contents[0], Integer.parseInt(contents[1]));
-                        break;
-                    case "find-polls":
-                        flagPoll = true;
-                        polls = management.findPoll(JWToken.VerifyJWT(request.getJwt()));
                         break;
                     case "usersInDirect":
                         flagDirectUsers = true;
@@ -207,24 +195,22 @@ class ClientHandler implements Runnable {
                     case "is-following":
                         flagIsFollowing = true;
                         boolean isfollowing = management.isFollowing(JWToken.VerifyJWT(request.getJwt()), contents[0]);
-                        if(isfollowing){
+                        if (isfollowing) {
                             isFollowing = "follow@yes";
-                        }
-                        else{
+                        } else {
                             isFollowing = "follow@no";
                         }
                         break;
-                    case "is-blocked" :
+                    case "is-blocked":
                         flagIsBlocked = true;
-                        boolean isblocked = management.isBlocked(JWToken.VerifyJWT(request.getJwt()),contents[0]);
-                        if(isblocked){
+                        boolean isblocked = management.isBlocked(JWToken.VerifyJWT(request.getJwt()), contents[0]);
+                        if (isblocked) {
                             isBlocked = "block@yes";
-                        }
-                        else{
+                        } else {
                             isBlocked = "block@no";
                         }
                         break;
-                    case "replyList" :
+                    case "replyList":
                         flagReplyList = true;
                         replies = management.tweetsInTimeLine(JWToken.VerifyJWT(request.getJwt()));
                         for (Message message : replies) {
@@ -254,13 +240,11 @@ class ClientHandler implements Runnable {
                     out.writeObject(otherInfo);
                 } else if (flagSearchHashtag) {
                     out.writeObject(messagesWithHashtag);
-                } else if (flagPoll) {
-                    out.writeObject(polls);
                 } else if (flagDirectMessages) {
                     out.writeObject(directMessages);
                 } else if (flagDirectUsers) {
                     out.writeObject(usersInDirect);
-                }else if(flagIsFollowing){
+                } else if (flagIsFollowing) {
                     out.writeObject(isFollowing);
                 } else if (flagIsBlocked) {
                     out.writeObject(isBlocked);

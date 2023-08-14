@@ -118,26 +118,22 @@ public class ServerOutput implements Runnable {
                             Main.controller.setUsersInDirect(users);
                         }
                     }
-                    if (!list.isEmpty() && list.get(0) instanceof PollInfo) {
-                        ArrayList<PollInfo> polls = (ArrayList<PollInfo>) list;
-                        Main.controller.setPollList(polls);
-                    }
                 } else if (object instanceof User) {
                     User user = (User) object;
                     Main.controller.setProfile(user);
                 } else if (object instanceof String) {
                     String is = (String) object;
                     String[] part = is.split("@");
-                    if(part[0].equals("follow")){
-                        if(part[1].equals("yes")){
+                    if (part[0].equals("follow")) {
+                        if (part[1].equals("yes")) {
                             Main.controller.is_following = true;
-                        }else{
+                        } else {
                             Main.controller.is_following = false;
                         }
                     } else if (part[0].equals("block")) {
-                        if(part[1].equals("yes")){
+                        if (part[1].equals("yes")) {
                             Main.controller.is_blocked = true;
-                        }else {
+                        } else {
                             Main.controller.is_blocked = false;
                         }
                     }

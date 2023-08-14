@@ -9,22 +9,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="330.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.twitter_client.Controller">
    <children>
-      <Button fx:id="simpleTweetBtn" layoutX="63.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet" textFill="#13171b">
+      <Button fx:id="simpleTweetBtn" layoutX="62.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet" textFill="#13171b">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
-      <Button fx:id="photoTweetBtn" layoutX="62.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet with photo">
+      <Button fx:id="photoTweetBtn" layoutX="62.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet with photo">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Button>
-      <Button fx:id="videoTweetBtn" layoutX="62.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet with video">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Button>
-      <Button fx:id="createPollBtn" layoutX="62.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Create Poll">
+      <Button fx:id="videoTweetBtn" layoutX="63.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Tweet with video">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
@@ -65,10 +60,5 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="polls" layoutX="62.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #1a9cff; -fx-background-radius: 90;" text="Polls">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

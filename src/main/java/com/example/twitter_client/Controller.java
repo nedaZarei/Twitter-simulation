@@ -96,9 +96,6 @@ public class Controller implements Initializable {
     private Button photoTweetBtn;
 
     @FXML
-    private Button poll;
-
-    @FXML
     private Button simpleTweetBtn;
 
     @FXML
@@ -252,10 +249,7 @@ public class Controller implements Initializable {
 
     @FXML
     private Button seeOthesFollowings;
-    @FXML
-    private Button createPollBtn;
-    @FXML
-    private Button polls;
+
     @FXML
     private ComboBox<String> countryComboBox;
 
@@ -550,15 +544,6 @@ public class Controller implements Initializable {
         if (event.getSource().equals(hashtagSearchBtn)) {
             ClientRequest req = new ClientRequest("searchHashtag", ServerOutput.token, hashtagExplorerTextField.getText());
             input.send(req);
-        }
-        if (event.getSource().equals(createPollBtn)) {
-            Scene scene = setControllerCreatePoll();
-            changeWindowToCreatePoll(scene);
-            Main.controller.setPollForm();
-        }
-        if (event.getSource().equals(polls)) {
-            Scene scene = setPollController();
-            changeWindowToPolls(scene);
         }
         if (event.getSource().equals(directBtn)) {
             Scene scene = setDirectController();
@@ -1143,75 +1128,6 @@ public class Controller implements Initializable {
             for (User user : users) {
                 ProfileComponent profileComponent = new ProfileComponent(user, "profile");
                 explorerContent.getChildren().add(profileComponent);
-            }
-        });
-    }
-
-    public Scene setControllerCreatePoll() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("poll.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 330, 560);
-        Main.controller = fxmlLoader.getController();
-        return scene;
-    }
-
-    public void changeWindowToCreatePoll(Scene scene) {
-        Platform.runLater(() -> {
-                    Main.primaryStage.setScene(scene);
-                    Main.primaryStage.setResizable(false);
-                    Main.primaryStage.show();
-                }
-        );
-    }
-
-    @FXML
-    private ScrollPane pollScrollPane;
-    private VBox pollContent;
-
-    public void setPollForm() {
-        pollContent = new VBox();
-        pollScrollPane.setContent(pollContent);
-        pollContent.setSpacing(10);
-        pollContent.setStyle("-fx-background-color:white;" + "-fx-padding: 8;");
-        PollInfo pollInfo = new PollInfo();
-        Poll poll = new Poll(pollScrollPane, pollContent, pollInfo);
-        pollContent.getChildren().add(poll);
-    }
-
-    public Scene setPollController() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("voting.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 330, 560);
-        Main.controller = fxmlLoader.getController();
-        ClientRequest req = new ClientRequest("find-polls", ServerOutput.token, "");
-        input.send(req);
-        return scene;
-    }
-
-    public void changeWindowToPolls(Scene scene) {
-        Platform.runLater(() -> {
-                    Main.primaryStage.setScene(scene);
-                    Main.primaryStage.setResizable(false);
-                    Main.primaryStage.show();
-                }
-        );
-    }
-
-    @FXML
-    private ScrollPane pollsListScrollPane;
-    private VBox pollCon;
-
-    public void setPollList(ArrayList<PollInfo> polls) {
-        Platform.runLater(() -> {
-            pollCon = new VBox();
-            pollsListScrollPane.setContent(pollCon);
-            pollCon.setSpacing(10);
-            pollCon.setStyle("-fx-background-color:white;" + "-fx-padding: 8;");
-            ArrayList<Integer> ids = new ArrayList<>();
-            for (PollInfo p : polls) {
-                PollForm pollForm = new PollForm(p);
-                if (!ids.contains(Integer.parseInt(p.getId()))) {
-                    pollCon.getChildren().add(pollForm);
-                    ids.add(Integer.parseInt(p.getId()));
-                }
             }
         });
     }

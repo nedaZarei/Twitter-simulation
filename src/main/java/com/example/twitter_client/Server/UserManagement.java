@@ -1,7 +1,5 @@
 package com.example.twitter_client.Server;
 
-import com.example.twitter_client.PollInfo;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -376,11 +374,6 @@ public class UserManagement {
         Main.db.voting(voterId, pollId, choice, timeStamp);
         return serverResponse;
     }
-
-    public ArrayList<PollInfo> findPoll(String username) {
-        return Main.db.findPoll(username);
-    }
-
     public ArrayList<User> getUsersForDirect(String username) {
         return Main.db.getDirectUsers(Main.db.getFollowingsForDirect(username));
     }

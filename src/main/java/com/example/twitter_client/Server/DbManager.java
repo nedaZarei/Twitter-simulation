@@ -1,6 +1,5 @@
 package com.example.twitter_client.Server;
 
-import com.example.twitter_client.PollInfo;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -872,44 +871,6 @@ public class DbManager {
             System.out.println(e.getMessage());
         }
         return followings;
-    }
-
-    public ArrayList<PollInfo> findPoll(String username) {
-        ArrayList<PollInfo> polls = new ArrayList<>();
-        ArrayList<String> pollCreators = findAllFollowings(username);
-        for (String users : pollCreators) {
-            String sql = "SELECT * FROM Poll WHERE creatorId = '" + username + "'";
-            try (Connection conn = connect()) {
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(sql);
-                while (rs.next()) {
-                    PollInfo p = new PollInfo();
-                    p.setDescription(rs.getString("description"));
-                    p.setNumOptions(Integer.parseInt(rs.getString("numberOfChoices")));
-                    p.setOptions(rs.getString("choices"));
-                    p.setId(rs.getString("id"));
-                    polls.add(p);
-                }
-                rs.close();
-                stmt.close();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        return polls;
-    }
-
-    public void voting(String username, int pollId, String choiceNumber, String date) {
-        String sql = "INSERT INTO Vote(username,pollId,choice,votingdate) VALUES (?,?,?,?)";
-        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, username);
-            pstmt.setInt(2, pollId);
-            pstmt.setString(3, choiceNumber);
-            pstmt.setString(4, date);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     public void addDirectMessage(String sender, String reciever, String message, String date) {
